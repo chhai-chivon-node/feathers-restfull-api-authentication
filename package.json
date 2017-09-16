@@ -24,7 +24,7 @@
   "scripts": {
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
-    "start": "node src/",
+    "start": "nodemon src/",
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {
@@ -36,10 +36,13 @@
     "feathers-errors": "^2.9.2",
     "feathers-hooks": "^2.0.2",
     "feathers-hooks-common": "^3.7.2",
+    "feathers-mongodb": "^2.9.0",
     "feathers-rest": "^1.8.0",
     "feathers-socketio": "^2.0.0",
     "generator-feathers": "^1.2.11",
     "helmet": "^3.8.1",
+    "mongodb": "^2.2.31",
+    "nodemon": "^1.12.1",
     "serve-favicon": "^2.4.4",
     "winston": "^2.3.1"
   },

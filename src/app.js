@@ -18,6 +18,10 @@ const middleware = require('./middleware');
 const services = require('./services');
 const appHooks = require('./app.hooks');
 
+const mongodb = require('./mongodb');
+
+const route = require('./../route/index');
+
 const app = feathers();
 
 // Load app configuration
@@ -31,9 +35,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 // Host the public folder
 app.use('/', feathers.static(app.get('public')));
+// Configure route
+app.use(route);
 
 // Set up Plugins and providers
 app.configure(hooks());
+app.configure(mongodb);
 app.configure(rest());
 app.configure(socketio());
 
